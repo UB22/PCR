@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a PCR test</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/fb8082c347.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">PCR Tests</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/about" class="navbar__links" id="about-page">About us</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/contact" class="navbar__links" id="contact-page">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="about_body">
+        <div class=first_section>
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p><span>PCR-Test-Finder</span> is a London based company and we focus on ease of accesibility to PCR testing services in the UK. PCR-Test-Finder is found to make everyone's life easier during the pandemic. Many people in the UK was affected by the pandemic significantly and with the new testing rules everything got very complicated. Our aim is to make it easier for everyone to find the right PCR testing provider in the UK. That's why we present all of 980 private providers that has been approved by the government so, that you can find the test that you need.</p>
+            </div>
+            <div class="pic1">
+                
+            </div>
+        </div>
+        <div class="second_section">
+            <div class="pic2"></div>
+            <div class="challenges">
+                <h2>Challenges</h2>
+                <p>When the pandemic started the world was not ready for it. Every country had to come up with a testing system on the fly and there were new regulations announced every month. In this chaos a lot of people struggled to find the right test for their budget and their timeline. That is why we created <span>PCR-Test-Finder</span>. Our aim is to make booking a test very effortless process.</p>
+                <p>If you have any queries you can reach us through the Contact us page or the button below</p>
+                <button onClick="location.href = #contact" id="contact_btn">Contact Us</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_header">
+            <h1><span>PCR-TEST-FINDER</span></h1>
+        </div>
+        <div class="footer_links">
+            <h3><a href="/" class="first_link">Home</a></h3>
+            <h3><a href="/contact" class="second_link">Contact Us</a></h3>
+            <h3><a href="/about" class="last_link">About Us</a></h3>
+        </div>
+        <div class="footer_description">
+            <p>PCR-TEST-FINDER aims to make finding the most affordable and the reliable test for you. This does not mean the information provided here is the most recent. That's why we always encourage you to check the private provider's website. PCR-TEST-FINDER is not responsible for any of the problems you may face during the testing process.</p>
+            <h5>@PCR-TEST-FINDER | All Rights Reserved</h5>
+        </div>
+    </div>
+    <script>
+		document.getElementById("contact_btn").onclick = function () {
+        location.href = "/contact";
+    	};
+		const menu = document.querySelector('#mobile-menu');
+		const menuLinks = document.querySelector('.navbar__menu');
+		const search_button = document.querySelector(".search__btn");
+
+
+		// Display mobile menu
+		const mobileMenu = () => {
+			menu.classList.toggle('is-active');
+			menuLinks.classList.toggle('active');
+		};
+
+		menu.addEventListener('click', mobileMenu);
+	</script>
+</body>
+</html>

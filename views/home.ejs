@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a PCR test</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="#home" id="navbar__logo">PCR Tests</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="#home" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/about" class="navbar__links" id="about-page">About us</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/contact" class="navbar__links" id="contact-page">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <div class="hero" id="home">
+        <div class="hero__container">
+            <h1 class="hero__heading">Find the right <span>PCR test</span> for you</h1>
+        </div>
+    </div>
+    <div class="hero_description">
+        <p class="hero__description">Out of 980 private providers we pick the right one for you. Find the right test for the right price by using the filters below. All the listed test centres are approved by the NHS. To get more information please use the guidance on the <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/testing/get-tested-for-coronavirus/">NHS website</a></p>
+    </div>
+    <!-- Filter Section -->
+    <div class="filters" id="search">
+        <div class="filter__container">
+            <form action="/filter" method="POST" class="tablefilters">
+                <div class="filterbutton">
+                    <select name="type" id="type">
+						<option disabled selected>Types</option>
+                        <option value="Fit to fly">Fit to fly</option>
+                        <option value="Test to release">Test to release</option>
+                    </select>
+					<select name="method" id="method">
+						<option disabled selected>Methods</option>
+                        <option value="Self-swab">Self-swab</option>
+                        <option value="Visit test centre">Visit test centre</option>
+                    </select>
+                    <select name="price" id="price">
+                        <option disabled selected>Price</option>
+                        <option value="low-to-high">Low-to-high</option>
+                        <option value="high-to-low">High-to-low</option>
+                    </select>
+                    <select name="location" id="location">
+                        <option disabled selected>Location</option>
+                        <option value="Nationwide">Nationwide</option>
+                        <option value="North West">North West</option>
+                        <option value="North East">North East</option>
+                        <option value="West Midlands">West Midlands</option>
+                        <option value="East Midlands">East Midlands</option>
+                        <option value="East of england">East of England</option>
+                        <option value="South west">South West</option>
+                        <option value="South East">South East</option>
+                        <option value="Greater London">Greater London</option>
+                        <option value="Northern Ireland">Northern Ireland</option>                    
+                        <option value="Yorkshire and the Humber">Yorkshire and the Humber</option>                   
+                    </select>
+                    <button class="search__btn">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="grid">
+        <ol id="providersList" data-columns="2">
+			<% providers.forEach((provider) => { %>
+			<li class="provider">
+				<h2 id="providers_Name"><a href="providers/<%=provider._id%>"><%= provider.name %></a></h2>
+				<div class="provider_table">
+					<table>
+						<tbody>
+							<tr>
+								<td><img class="symbol" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNC4xOTggMC04IDMuNDAzLTggNy42MDIgMCA0LjE5OCAzLjQ2OSA5LjIxIDggMTYuMzk4IDQuNTMxLTcuMTg4IDgtMTIuMiA4LTE2LjM5OCAwLTQuMTk5LTMuODAxLTcuNjAyLTgtNy42MDJ6bTAgMTFjLTEuNjU3IDAtMy0xLjM0My0zLTNzMS4zNDMtMyAzLTMgMyAxLjM0MyAzIDMtMS4zNDMgMy0zIDN6Ii8+PC9zdmc+"><span><%= provider.region %></span></td>
+								<td><img class="symbol" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMmM1LjUxNCAwIDEwIDQuNDg2IDEwIDEwcy00LjQ4NiAxMC0xMCAxMC0xMC00LjQ4Ni0xMC0xMCA0LjQ4Ni0xMCAxMC0xMHptMC0yYy02LjYyNyAwLTEyIDUuMzczLTEyIDEyczUuMzczIDEyIDEyIDEyIDEyLTUuMzczIDEyLTEyLTUuMzczLTEyLTEyLTEyem00IDE0LjA4M2MwLTIuMTQ1LTIuMjMyLTIuNzQyLTMuOTQzLTMuNTQ2LTEuMDM5LS41NC0uOTA4LTEuODI5LjU4MS0xLjkxNi44MjYtLjA1IDEuNjc1LjE5NSAyLjQ0My40NjVsLjM2Mi0xLjY0N2MtLjkwNy0uMjc2LTEuNzE5LS40MDItMi40NDMtLjQyMXYtMS4wMThoLTF2MS4wNjdjLTEuOTQ1LjI2Ny0yLjk4NCAxLjQ4Ny0yLjk4NCAyLjg1IDAgMi40MzggMi44NDcgMi44MSAzLjc3OCAzLjI0MyAxLjI3LjU2OCAxLjAzNSAxLjc1LS4xMTQgMi4wMTEtLjk5Ny4yMjYtMi4yNjktLjE2OC0zLjIyNS0uNTRsLS40NTUgMS42NDRjLjg5NC40NjIgMS45NjUuNzA4IDMgLjcyN3YuOTk4aDF2LTEuMDUzYzEuNjU3LS4yMzIgMy4wMDItMS4xNDYgMy0yLjg2NHoiLz48L3N2Zz4="><span>£<%= provider.price %></span></td>
+							</tr>
+							<tr>
+								<td><img class="symbol" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNCAyMnYtMjBoMTZ2MTEuNTQzYzAgNC4xMDctNiAyLjQ1Ny02IDIuNDU3czEuNTE4IDYtMi42MzggNmgtNy4zNjJ6bTE4LTcuNjE0di0xNC4zODZoLTIwdjI0aDEwLjE4OWMzLjE2MyAwIDkuODExLTcuMjIzIDkuODExLTkuNjE0em0tNS0xLjM4NmgtMTB2LTFoMTB2MXptMC00aC0xMHYxaDEwdi0xem0wLTNoLTEwdjFoMTB2LTF6Ii8+PC9zdmc+"><span><%= provider.type %></span></td>
+								<td> <img class="symbol" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yNCAxOWgtMXYtMi4yYy0xLjg1MyA0LjIzNy02LjA4MyA3LjItMTEgNy4yLTYuNjIzIDAtMTItNS4zNzctMTItMTJoMWMwIDYuMDcxIDQuOTI5IDExIDExIDExIDQuNjYgMCA4LjY0Ny0yLjkwNCAxMC4yNDktN2gtMi4yNDl2LTFoNHY0em0tMTAuNzcyIDBoLTIuNDU3Yy0uNDQ4LTEuMjg2LS40ODktMS41OTktLjkzMS0xLjc4MS0uNDY4LS4xOTMtLjc3LjA0NC0xLjkyMi41OThsLTEuNzM2LTEuNzM1Yy41ODctMS4yMTcuNzg2LTEuNDczLjYtMS45MjItLjE4OC0uNDUxLS41MjgtLjQ5NS0xLjc4Mi0uOTMydi0yLjQ1N2MxLjI4NS0uNDQ4IDEuNTk4LS40ODggMS43ODItLjkzMi4xOTItLjQ2NS0uMDQtLjc1OC0uNi0xLjkyMWwxLjczNi0xLjczNmMxLjE2My41NjEgMS40NjcuNzkyIDEuOTIxLjYuNDYtLjE5MS41MDUtLjU1Ni45MzItMS43ODJoMi40NTdjLjQ0OSAxLjI4Ny40OSAxLjU5OS45MzIgMS43ODEuNDY2LjE5NC43NzYtLjA0NSAxLjkyMi0uNTk5bDEuNzM1IDEuNzM2Yy0uNTgxIDEuMjA4LS43ODQgMS40NzMtLjU5OSAxLjkyMS4xOTEuNDYuNTU2LjUwNSAxLjc4Mi45MzJ2Mi40NTdjLTEuMjcuNDQyLTEuNTk3LjQ4Ny0xLjc4Mi45MzMtLjE4Ny40NTIuMDIyLjcyMi41OTkgMS45MjFsLTEuNzM1IDEuNzM1Yy0xLjA5Ni0uNTI2LTEuNDUyLS43OTgtMS45MTYtLjYwMS0uNDY1LjE5My0uNTA4LjU1My0uOTM4IDEuNzg0em0tLjcxLTEzaC0xLjAzNmMtLjI0My43MjItLjQ2MiAxLjM3NS0xLjI2IDEuNzA1LS43NDQuMzEtMS4zODMuMDMyLTIuMDk4LS4zMTRsLS43MzMuNzMzYy4zNjMuNzQuNjQ0IDEuMzAzLjMxNSAyLjA5OC0uMzQzLjgyNy0uOTY5Ljk5MS0xLjcwNiAxLjI1OXYxLjA0NmMuNzIzLjI0NCAxLjM3NS40NTMgMS43MDYgMS4yNS4zMzIuODAyLjAzMyAxLjM3OC0uMzE1IDIuMWwuNzMzLjczMWMuNzExLS4zNDggMS4zNTUtLjYyMiAyLjA5OC0uMzE0Ljc1Ny4zMTQgMS4wMTEuOTA5IDEuMjU5IDEuNzA2aDEuMDI5Yy4yNDQtLjcyMy40NzEtMS4zNzUgMS4yNzItMS43MDguNzczLS4zMiAxLjQtLjAxIDIuMDk0LjMxNmwuNzMxLS43MzJjLS4zMzYtLjcyNC0uNjU2LTEuMjY4LS4zMTMtMi4wOTguMzQ0LS44MjguOTYzLS45ODUgMS43MDYtMS4yNnYtMS4wMzZjLS43MjQtLjI0My0xLjM3NS0uNDYzLTEuNzA2LTEuMjYtLjMzLS43OTgtLjA0NC0xLjM2Ny4zMTUtMi4wOThsLS43MzItLjczM2MtLjcxNS4zNDQtMS4zNDUuNjI3LTIuMDk5LjMxNS0uNzg5LS4zMjctLjk5NC0uOTIyLTEuMjYtMS43MDZ6bS0uNTM5IDguNWMtMS4zNzggMC0yLjUtMS4xMjItMi41LTIuNXMxLjEyMi0yLjUgMi41LTIuNSAyLjUgMS4xMjIgMi41IDIuNS0xLjEyMiAyLjUtMi41IDIuNXptMC00Yy0uODI3IDAtMS41LjY3My0xLjUgMS41cy42NzMgMS41IDEuNSAxLjUgMS41LS42NzMgMS41LTEuNS0uNjczLTEuNS0xLjUtMS41em0tNy45NzktMS41aC00di00aDF2Mi4yYzEuODUzLTQuMjM3IDYuMDgzLTcuMiAxMS03LjIgNi42MjMgMCAxMiA1LjM3NyAxMiAxMmgtMWMwLTYuMDcxLTQuOTI5LTExLTExLTExLTQuNjYgMC04LjY0NyAyLjkwNC0xMC4yNDkgN2gyLjI0OXYxeiIvPjwvc3ZnPg=="><span><%= provider.method %></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</li>
+<% }) %>
+		</ol>
+    </div>
+    <div class="footer">
+        <div class="footer_header">
+            <h1><span>PCR-TEST-FINDER</span></h1>
+        </div>
+        <div class="footer_links">
+            <h3><a href="#home" class="first_link">Home</a></h3>
+            <h3><a href="/contact" class="second_link">Contact Us</a></h3>
+            <h3><a href="/about" class="last_link">About Us</a></h3>
+        </div>
+        <div class="footer_description">
+            <p>PCR-TEST-FINDER aims to make finding the most affordable and the reliable test for you. This does not mean the information provided here is the most recent. That's why we always encourage you to check the private provider's website. PCR-TEST-FINDER is not responsible for any of the problems you may face during the testing process.</p>
+            <h5>@PCR-TEST-FINDER | All Rights Reserved</h5>
+        </div>
+    </div>
+    <script>
+		const menu = document.querySelector('#mobile-menu');
+		const menuLinks = document.querySelector('.navbar__menu');
+		const search_button = document.querySelector(".search__btn");
+
+
+		// Display mobile menu
+		const mobileMenu = () => {
+			menu.classList.toggle('is-active');
+			menuLinks.classList.toggle('active');
+		};
+
+		menu.addEventListener('click', mobileMenu);
+	</script>
+</body>
+</html>

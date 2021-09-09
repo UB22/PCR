@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a PCR test</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/fb8082c347.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">PCR Tests</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/about" class="navbar__links" id="about-page">About us</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/contact" class="navbar__links" id="contact-page">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="submitted_body">
+        <div class="section1">
+            <div class="submitted_pic">
+                
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_header">
+            <h1><span>PCR-TEST-FINDER</span></h1>
+        </div>
+        <div class="footer_links">
+            <h3><a href="/" class="first_link">Home</a></h3>
+            <h3><a href="/contact" class="second_link">Contact Us</a></h3>
+            <h3><a href="/about" class="last_link">About Us</a></h3>
+        </div>
+        <div class="footer_description">
+            <p>PCR-TEST-FINDER aims to make finding the most affordable and the reliable test for you. This does not mean the information provided here is the most recent. That's why we always encourage you to check the private provider's website. PCR-TEST-FINDER is not responsible for any of the problems you may face during the testing process.</p>
+            <h5>@PCR-TEST-FINDER | All Rights Reserved</h5>
+        </div>
+    </div>
+    <script>
+		const menu = document.querySelector('#mobile-menu');
+		const menuLinks = document.querySelector('.navbar__menu');
+		const search_button = document.querySelector(".search__btn");
+
+
+		// Display mobile menu
+		const mobileMenu = () => {
+			menu.classList.toggle('is-active');
+			menuLinks.classList.toggle('active');
+		};
+
+		menu.addEventListener('click', mobileMenu);
+	</script>
+</body>
+</html>

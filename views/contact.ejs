@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find a PCR test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PCR Test Finder</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/fb8082c347.js" crossorigin="anonymous"></script>
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <!-- Navbar Section -->
     <nav class="navbar">
         <div class="navbar__container">
-            <a href="/" id="navbar__logo">PCR Tests</a>
+            <a href="/" id="navbar__logo">PCR Test Finder</a>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -33,7 +37,7 @@
     <div class="contact_hero">
         <div class="contact_header">
             <h1>Ask Away!</h1>
-            <p>We would love to hear your questions and opinions. To do so, use the form below...</p>
+            <p>We would love to hear your questions and opinions...</p>
         </div>
         <div class="contact_body">
             <div class=form_section>
@@ -41,13 +45,13 @@
                     <h2>Contact Us</h2>
                 </div>
                 <div class="form_body">
-                    <form action="/contact/submitted" method="POST">
+                    <form action="#">
                         <label for="firstname">First Name</label>
                         <input required type="text" id="firstname" name="firstname" placeholder="First Name...">
                         <label for="surname">Last Name</label>
                         <input required type="text" id="surname" name="surname" placeholder="Last Name...">
                         <label for="email">Email Address</label>
-                        <input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email" name="email" placeholder="Email...">
+                        <input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email" name="email" placeholder="Your email...">
                         <label for="message">Message</label>
                         <textarea type="text" id="message" name="message"></textarea>
                         <input type="submit">
@@ -67,7 +71,7 @@
         </div>
         <div class="footer_description">
             <p>PCR-TEST-FINDER aims to make finding the most affordable and the reliable test for you. This does not mean the information provided here is the most recent. That's why we always encourage you to check the private provider's website. PCR-TEST-FINDER is not responsible for any of the problems you may face during the testing process.</p>
-            <h5>@PCR-TEST-FINDER | All Rights Reserved</h5>
+            <h5>@PCR-Test-Finder</h5>
         </div>
     </div>
     <script>
